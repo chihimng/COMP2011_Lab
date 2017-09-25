@@ -49,6 +49,34 @@ int drawCake(int layers, int height, int width, char crust, char filling) {
             cout << "\n";
         }
     }
+ /* Alternative
+    // Each Layer
+    for (int myLayer = layers; myLayer > 0; myLayer--) {
+        int layerDiff = myLayer - 1;
+        // Each Row
+        for (int myRow = 0; myRow < height - layerDiff * 1; myRow++) {
+            // Each Column
+            for (int myCol = 0; myCol < width; myCol++) {
+                if (myCol < layerDiff * 2 || myCol > width - layerDiff * 2 - 1) {
+                    // inset
+                    cout << ' ';
+                } else if (myCol == layerDiff * 2 || myCol == width - layerDiff * 2 - 1) {
+                    // border
+                    cout << crust;
+                } else {
+                    // middle
+                    if (myRow == 0 || myRow == height - layerDiff * 1 - 1) {
+                        //crust
+                        cout << crust;
+                    } else {
+                        cout << filling;
+                    }
+                }
+            }
+            cout << '\n';
+        }
+    }
+     */
     return 0;
 }
 
