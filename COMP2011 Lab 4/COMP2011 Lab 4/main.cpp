@@ -11,6 +11,7 @@ using namespace std;
 
 //Task 1 Write a function print_maze to print the maze.
 void print_maze(char maze[], int height, int width) {
+    // add new line after each width
     for (int i = 0; i < height * width; i++) {
         if (!(i % width)) cout << '\n' ;
         cout << maze[i];
@@ -21,14 +22,14 @@ void print_maze(char maze[], int height, int width) {
 //Task 2 Write a function is_valid_move to check if the move is valid or not.
 
 bool is_valid_move(char maze[], int height, int width, int x, int y, char move) {
-    // Parse into 2D array
+    // Parse maze into 2D array
     char maze2d[100][100] = {};
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             maze2d[i][j] = maze[width * i + j];
         }
     }
-
+    // check if valid
     switch (move) {
         case 'w':
             if ((y - 1) < 0) return false;
@@ -49,9 +50,11 @@ bool is_valid_move(char maze[], int height, int width, int x, int y, char move) 
 
 //Task 3 Write a function update_maze to update the position of the player in the maze.
 void update_maze(char maze[], int height, int width, int x, int y) {
+    // remove previous player location
     for (int i = 0; i < height * width; i++) {
         if (maze[i] == 'P') maze[i] = ' ';
     }
+    // mark new location
     maze[y * width + x] = 'P';
 }
 
