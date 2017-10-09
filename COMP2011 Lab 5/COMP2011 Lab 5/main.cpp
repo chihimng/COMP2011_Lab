@@ -126,10 +126,21 @@ void copyGameBoard(int dst[][GAMEBOARDSIZE], const int src[][GAMEBOARDSIZE]) {
 
 // TODO: Return the number of live neighbors of cell gameBoard[x][y]
 int getLiveNeighbors(const int gameBoard[][GAMEBOARDSIZE], int x, int y) {
-
     int neighbors = 0;
 
-    // YOUR CODE:
+    int top = x == 0 ? GAMEBOARDSIZE - 1 : x - 1;
+    int left = y == 0 ? GAMEBOARDSIZE - 1 : y - 1;
+    int bottom = x == GAMEBOARDSIZE - 1 ? 0 : x + 1;
+    int right = y == GAMEBOARDSIZE - 1 ? 0 : y + 1;
+
+    neighbors += gameBoard[top][left];
+    neighbors += gameBoard[top][y];
+    neighbors += gameBoard[top][right];
+    neighbors += gameBoard[x][left];
+    neighbors += gameBoard[x][right];
+    neighbors += gameBoard[bottom][left];
+    neighbors += gameBoard[bottom][y];
+    neighbors += gameBoard[bottom][right];
 
     return neighbors;
 }
