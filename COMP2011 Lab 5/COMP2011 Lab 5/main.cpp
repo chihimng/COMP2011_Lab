@@ -108,12 +108,20 @@ void printGameBoard(const int gameBoard[][GAMEBOARDSIZE]) {
 
 // TODO: Set all cells in the game board to be dead
 void initGameBoard(int gameBoard[][GAMEBOARDSIZE]) {
-
+    for (int i = 0; i < GAMEBOARDSIZE; i++) {
+        for (int j = 0; j < GAMEBOARDSIZE; j++) {
+            gameBoard[i][j] = 0;
+        }
+    }
 }
 
 // TODO: Copy states of all cells from src to dst
 void copyGameBoard(int dst[][GAMEBOARDSIZE], const int src[][GAMEBOARDSIZE]) {
-
+    for (int i = 0; i < GAMEBOARDSIZE; i++) {
+        for (int j = 0; j < GAMEBOARDSIZE; j++) {
+            dst[i][j] = src[i][j];
+        }
+    }
 }
 
 // TODO: Return the number of live neighbors of cell gameBoard[x][y]
