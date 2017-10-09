@@ -98,7 +98,12 @@ const int DIEHARD[GAMEBOARDSIZE][GAMEBOARDSIZE] = {
 
 // TODO: print game board specified
 void printGameBoard(const int gameBoard[][GAMEBOARDSIZE]) {
-
+    for (int i = 0; i < GAMEBOARDSIZE; i++) {
+        for (int j = 0; j < GAMEBOARDSIZE; j++) {
+            cout << (gameBoard[i][j] ? "X" : " ");
+        }
+        cout << '\n';
+    }
 }
 
 // TODO: Set all cells in the game board to be dead
