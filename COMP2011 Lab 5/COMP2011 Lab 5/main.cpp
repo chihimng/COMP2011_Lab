@@ -148,7 +148,22 @@ int getLiveNeighbors(const int gameBoard[][GAMEBOARDSIZE], int x, int y) {
 // TODO: Update the game board according to the rules described
 // HINT: Create a temporary game board
 void updateGameBoard(int gameBoard[][GAMEBOARDSIZE]) {
+    int tempBoard[GAMEBOARDSIZE][GAMEBOARDSIZE] = {};
+    
+    for (int i = 0; i < GAMEBOARDSIZE; i++) {
+        for (int j = 0; j < GAMEBOARDSIZE; j++) {
+            int liveNeighbors = getLiveNeighbors(gameBoard, i, j);
+            if (gameBoard[i][j] == 1) {
+                // live cells
+                tempBoard[i][j] = liveNeighbors >= 2 && liveNeighbors <= 3 ? 1 : 0;
+            } else {
+                // dead cells
+                tempBoard[i][j] = liveNeighbors == 3 ? 1 : 0;
+            }
+        }
+    }
 
+    copyGameBoard(gameBoard, tempBoard);
 }
 
 void testPrintGameBoard() {
