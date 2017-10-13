@@ -11,10 +11,85 @@ using namespace std;
 
 const int BOARD_SIZE = 9;
 
+bool isGroupValid(int group[9]) {
+    bool isValid = true;
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            if (group[j] == i) {
+                break;
+            } else if (j == 8) {
+                isValid = false;
+            }
+        }
+        if (!isValid) {
+            break;
+        }
+    }
+    return isValid;
+}
+
 bool check_solution(int board[][BOARD_SIZE]){
+    bool isGameValid = true;
+    // check rows
+    for (int i = 0; i < BOARD_SIZE; i++) { // each row
+        int group[9] = {};
+        for (int j = 0; j < BOARD_SIZE; j++) { // each col
+            group[j] = board[i][j];
+        }
+        if (!isGroupValid(group)) {
+            isGameValid = false;
+            break;
+        }
+    }
+    if (!isGameValid) {
+        return isGameValid;
+    }
+
+    // check cols
+    for (int i = 0; i < BOARD_SIZE; i++) { // each col
+        int group[9] = {};
+        for (int j = 0; j < BOARD_SIZE; j++) { // each row
+            group[j] = board[j][i];
+        }
+        if (!isGroupValid(group)) {
+            isGameValid = false;
+            break;
+        }
+    }
+    if (!isGameValid) {
+        return isGameValid;
+    }
+
+    // check boxes
+    for (int i = 0; i < 3; i++) { // row offset
+        for (int j = 0; j < 3; j++) { // col offset
+            int group[9] = {};
+            int rowOffset = i * 3;
+            int coloffset = j * 3;
+            group[0] = board[0 + rowOffset][0 + coloffset];
+            group[1] = board[0 + rowOffset][1 + coloffset];
+            group[2] = board[0 + rowOffset][2 + coloffset];
+            group[3] = board[1 + rowOffset][0 + coloffset];
+            group[4] = board[1 + rowOffset][1 + coloffset];
+            group[5] = board[1 + rowOffset][2 + coloffset];
+            group[6] = board[2 + rowOffset][0 + coloffset];
+            group[7] = board[2 + rowOffset][1 + coloffset];
+            group[8] = board[2 + rowOffset][2 + coloffset];
+            if (!isGroupValid(group)) {
+                isGameValid = false;
+                break;
+            }
+        }
+        if (!isGameValid) {
+            break;
+        }
+    }
+    return isGameValid;
 }
 
 bool solve(int board[][BOARD_SIZE], int i, int j){
+    // TODO
+    return false;
 }
 
 bool solve_sudoku(int board[][BOARD_SIZE]){
