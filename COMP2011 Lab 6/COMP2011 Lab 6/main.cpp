@@ -66,8 +66,8 @@ bool check_solution(int board[][BOARD_SIZE]){
             int group[9] = {};
             int rowOffset = i * 3;
             int colOffset = j * 3;
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 3; i++) { // each row of box
+                for (int j = 0; j < 3; j++) { // each col of box
                     group[j + 3 * i] = board[i + rowOffset][j + colOffset];
                 }
             }
