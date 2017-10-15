@@ -65,16 +65,16 @@ bool check_solution(int board[][BOARD_SIZE]){
         for (int j = 0; j < 3; j++) { // col offset
             int group[9] = {};
             int rowOffset = i * 3;
-            int coloffset = j * 3;
-            group[0] = board[0 + rowOffset][0 + coloffset];
-            group[1] = board[0 + rowOffset][1 + coloffset];
-            group[2] = board[0 + rowOffset][2 + coloffset];
-            group[3] = board[1 + rowOffset][0 + coloffset];
-            group[4] = board[1 + rowOffset][1 + coloffset];
-            group[5] = board[1 + rowOffset][2 + coloffset];
-            group[6] = board[2 + rowOffset][0 + coloffset];
-            group[7] = board[2 + rowOffset][1 + coloffset];
-            group[8] = board[2 + rowOffset][2 + coloffset];
+            int colOffset = j * 3;
+            group[0] = board[0 + rowOffset][0 + colOffset];
+            group[1] = board[0 + rowOffset][1 + colOffset];
+            group[2] = board[0 + rowOffset][2 + colOffset];
+            group[3] = board[1 + rowOffset][0 + colOffset];
+            group[4] = board[1 + rowOffset][1 + colOffset];
+            group[5] = board[1 + rowOffset][2 + colOffset];
+            group[6] = board[2 + rowOffset][0 + colOffset];
+            group[7] = board[2 + rowOffset][1 + colOffset];
+            group[8] = board[2 + rowOffset][2 + colOffset];
             if (!isGroupValid(group)) {
                 isGameValid = false;
                 break;
@@ -87,8 +87,70 @@ bool check_solution(int board[][BOARD_SIZE]){
     return isGameValid;
 }
 
+bool isGuessLegal(int board[][BOARD_SIZE], int row, int col, int guess) {
+    int rowGroup[BOARD_SIZE] = {};
+    int colGroup[BOARD_SIZE] = {};
+    int boxGroup[BOARD_SIZE] = {};
+    int rowOffset = row / 3 * 3;
+    int colOffset = col / 3 * 3;
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        rowGroup[i] = board[row][i];
+        colGroup[i] = board[i][col];
+    }
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            boxGroup[j+3*i] = board[i+rowOffset][j+colOffset];
+        }
+    }
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        if (rowGroup[i] == guess) {
+            return false;
+        }
+        if (colGroup[i] == guess) {
+            return false;
+        }
+        if (boxGroup[i] == guess) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool isBoardEmpty(int board[][BOARD_SIZE]) {
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        for (int j = 0; j < BOARD_SIZE; j++) {
+            if (board[i][j] == 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 bool solve(int board[][BOARD_SIZE], int i, int j){
-    // TODO
+    // solved found if board not empty
+    if (isBoardEmpty(board)) {
+        return true;
+    }
+    // move to next cell if cell not empty
+    if (board[i][j] != 0) {
+        return solve(board, i + (j + 1) / BOARD_SIZE, (j + 1) % BOARD_SIZE);
+    }
+    // iterate guesses
+    for (int guess = 1; guess <= BOARD_SIZE; guess++) {
+        if (isGuessLegal(board, i, j, guess)) {
+            // assign if guess is legal
+            board[i][j] = guess;
+            // recursion
+            if (solve(board, i, j)) {
+                return true;
+            } else {
+                // children have no solution, try next guess
+                board[i][j] = 0;
+            }
+        }
+    }
+    // all guesses iterated, no solution found
     return false;
 }
 
