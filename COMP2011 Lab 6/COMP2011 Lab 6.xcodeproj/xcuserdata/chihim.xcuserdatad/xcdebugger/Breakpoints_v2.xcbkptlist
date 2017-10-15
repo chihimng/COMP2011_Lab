@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.806735"
+            timestampString = "529790361.39852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.807129"
+            timestampString = "529790361.398956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.807414"
+            timestampString = "529790361.399351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "check_solution(int board[][BOARD_SIZE])"
             landmarkType = "9">
          </BreakpointContent>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.807685"
+            timestampString = "529790361.399663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.807958"
+            timestampString = "529790361.39999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.808226"
+            timestampString = "529790361.400302"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.808496"
+            timestampString = "529790361.4006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.808761"
+            timestampString = "529790361.4009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -138,7 +138,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.809029"
+            timestampString = "529790361.401222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "solve(int board[][BOARD_SIZE], int i, int j)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "COMP2011 Lab 6/main.cpp"
+            timestampString = "529790361.401511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -154,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.809287"
+            timestampString = "529790361.401793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "solve(int board[][BOARD_SIZE], int i, int j)"
             landmarkType = "9">
          </BreakpointContent>
@@ -170,27 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.809541"
+            timestampString = "529790361.402065"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "solve(int board[][BOARD_SIZE], int i, int j)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "COMP2011 Lab 6/main.cpp"
-            timestampString = "529790234.809772"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "solve(int board[][BOARD_SIZE], int i, int j)"
             landmarkType = "9">
          </BreakpointContent>

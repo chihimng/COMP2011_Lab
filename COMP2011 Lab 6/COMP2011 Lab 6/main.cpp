@@ -66,15 +66,11 @@ bool check_solution(int board[][BOARD_SIZE]){
             int group[9] = {};
             int rowOffset = i * 3;
             int colOffset = j * 3;
-            group[0] = board[0 + rowOffset][0 + colOffset];
-            group[1] = board[0 + rowOffset][1 + colOffset];
-            group[2] = board[0 + rowOffset][2 + colOffset];
-            group[3] = board[1 + rowOffset][0 + colOffset];
-            group[4] = board[1 + rowOffset][1 + colOffset];
-            group[5] = board[1 + rowOffset][2 + colOffset];
-            group[6] = board[2 + rowOffset][0 + colOffset];
-            group[7] = board[2 + rowOffset][1 + colOffset];
-            group[8] = board[2 + rowOffset][2 + colOffset];
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    group[j + 3 * i] = board[i + rowOffset][j + colOffset];
+                }
+            }
             if (!isGroupValid(group)) {
                 isGameValid = false;
                 break;
@@ -99,7 +95,7 @@ bool isGuessLegal(int board[][BOARD_SIZE], int row, int col, int guess) {
     }
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            boxGroup[j+3*i] = board[i+rowOffset][j+colOffset];
+            boxGroup[j + 3 * i] = board[i + rowOffset][j + colOffset];
         }
     }
     for (int i = 0; i < BOARD_SIZE; i++) {
