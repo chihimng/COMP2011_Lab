@@ -11,17 +11,17 @@ using namespace std;
 
 const int BOARD_SIZE = 9;
 
-bool isGroupValid(int group[9]) {
+bool isGroupValid(int group[BOARD_SIZE]) {
     bool isValid = true;
-    for (int i = 1; i <= 9; i++) {
-        for (int j = 0; j < 9; j++) {
+    for (int i = 1; i <= BOARD_SIZE; i++) { // each possible value
+        for (int j = 0; j < BOARD_SIZE; j++) { // each cell in group
             if (group[j] == i) {
-                break;
-            } else if (j == 8) {
-                isValid = false;
+                break; // value found, go to next possible value
+            } else if (j == BOARD_SIZE - 1) {
+                isValid = false; // last cell, value still not found, group invalid
             }
         }
-        if (!isValid) {
+        if (!isValid) { // skip iterations if invalid already
             break;
         }
     }
