@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D97C8AB71FA9B1150039AE6E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D97C8AB61FA9B1150039AE6E /* main.cpp */; };
+		D97C8ABE1FA9BB1F0039AE6E /* input.txt in Sources */ = {isa = PBXBuildFile; fileRef = D97C8ABD1FA9BAEC0039AE6E /* input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		D97C8AB31FA9B1150039AE6E /* COMP2011 Lab 7 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "COMP2011 Lab 7"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97C8AB61FA9B1150039AE6E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D97C8ABD1FA9BAEC0039AE6E /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		D97C8AB51FA9B1150039AE6E /* COMP2011 Lab 7 */ = {
 			isa = PBXGroup;
 			children = (
+				D97C8ABD1FA9BAEC0039AE6E /* input.txt */,
 				D97C8AB61FA9B1150039AE6E /* main.cpp */,
 			);
 			path = "COMP2011 Lab 7";
@@ -119,6 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D97C8ABE1FA9BB1F0039AE6E /* input.txt in Sources */,
 				D97C8AB71FA9B1150039AE6E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

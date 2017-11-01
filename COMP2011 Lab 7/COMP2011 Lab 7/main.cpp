@@ -7,9 +7,65 @@
 //
 
 #include <iostream>
+#include <fstream>
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    const int MaxSize = 1000;
+    int wordCount = 0;
+    int charCount = 0;
+    char rawString[MaxSize*MaxSize] = {};
+    char words[MaxSize][MaxSize] = {};
+    char punctuations[15] = {'\'',',','.','-','_','<','>','(',')','!','\?','\\','\"',';',':'};
+    char filename[MaxSize] = {};
+
+    ifstream ifs;
+    ifs.open("input.txt");
+    if (!ifs) {
+        cout << "Failed to open input.txt" << endl;
+        return -1;
+    }
+    
+    while (!ifs.eof() && !(charCount >= MaxSize*MaxSize)) {
+        ifs.get(rawString[charCount]);
+        charCount += 1;
+    }
+    ifs.close();
+    
+    for (int i = 0; i < charCount; i++) {
+        for (int j = 0; j < 15; j++) {
+            if (rawString[i] == punctuations[j] || rawString[i] == '\n') {
+                rawString[i] = ' ';
+            } else if (rawString[i] >= 'A' && rawString[i] <= 'Z') {
+                rawString[i] = rawString[i] + 'a' - 'A';
+            }
+        }
+    }
+    
+    int wordLength = 0;
+    for (int i = 0; i < charCount; i++) {
+        if (rawString[i] == ' ') {
+            if (i > 0 && rawString[i-1] != ' ') {
+                wordLength = 0;
+                wordCount += 1;
+            }
+            continue;
+        }
+        words[wordCount][wordLength] = rawString[i];
+        wordLength += 1;
+    }
+    
+    ofstream ofs;
+    ofs.open("output.txt");
+    if (!ofs) {
+        cout << "Failed to open input.txt" << endl;
+        return -1;
+    }
+    ofs << "text size : " << wordCount << endl;
+    for (int i = 0; i < wordCount; i++) {
+        ofs << words[i] << endl;
+    }
+    ofs.close();
+    
     return 0;
 }
