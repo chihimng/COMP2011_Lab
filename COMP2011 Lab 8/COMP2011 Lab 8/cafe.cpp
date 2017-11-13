@@ -92,7 +92,7 @@ void recommend_based_on_distance(const Cafe cafes[], const Point& my_location, i
             }
         }
     }
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N && i < cafe_num; i++) {
         print_cafe(cafeWithDistList[i].cafe);
     }
 }
