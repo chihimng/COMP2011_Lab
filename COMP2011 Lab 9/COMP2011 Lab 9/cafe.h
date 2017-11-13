@@ -35,10 +35,12 @@ struct Cafe{
 // TODO 5: Add the appropriate function declarations here.
 float calc_avg_rating(const Cafe*);  // given
 void load_cafe(Cafe[], int*, string);  // given
-void load_rating(Cafe[], int, User[], int);  // given
-
-
-
+void load_rating(Cafe[], int, User[], int, string);  // given
+void add_cafe(Cafe[], int*, const char[], const Point*);
+void add_rating(Cafe*, User*, float);
+void print_cafe(const Cafe*);
+void print_cafe_rating_by_user(const Cafe*);
+void recommend_best_options(const Cafe[], const Point*, int);
 
 
 

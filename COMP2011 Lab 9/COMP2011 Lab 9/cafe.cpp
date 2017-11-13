@@ -142,11 +142,11 @@ void recommend_best_options(const Cafe cafes[], const Point* my_location, int ca
             }
         }
     }
-    if (cafesSortedByDist[0].cafe.name == cafesSortedByRating[0].name) {
+    if (strcmp(cafesSortedByDist[0].cafe.name, cafesSortedByRating[0].name) == 0) {
         print_cafe(&cafesSortedByRating[0]);
     } else {
         print_cafe(&cafesSortedByRating[0]);
-        print_cafe(&cafesSortedByDist[0]);
+        print_cafe(&cafesSortedByDist[0].cafe);
     }
 }
 
