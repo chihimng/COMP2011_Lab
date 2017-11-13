@@ -19,6 +19,16 @@ void load_user(User users[], int *num_users, string filename)
 void add_user(User users[], int* num_users, int id, const char user_name[])
 {
 	//TODO 3 Add Your Code Here
+    User newUser;
+    newUser.id = id;
+    for (int i = 0; i < MAX_NAME_SIZE; i++) {
+        newUser.name[i] = user_name[i];
+        if (user_name[i] == '\0') {
+            break;
+        }
+    }
+    users[*num_users] = newUser;
+    *num_users += 1;
 }
 
 // This function returns the address of the User object in the User array, users, with the id member of the value, id.
@@ -29,10 +39,18 @@ void add_user(User users[], int* num_users, int id, const char user_name[])
 User *search_user_by_id(User users[], int num_users, int id)
 {
 	//TODO 3 Add Your Code Here
+    for (int i = 0; i < num_users; i++) {
+        if (users[i].id == id) {
+            return &users[i];
+        }
+    }
+    return nullptr;
 }
 
 // This function will print user information including its ID and name
 void print_user(const User *user)
 {
 	//TODO 3 Add Your Code Here
+    User userValue = *user;
+    cout << "< ID: " << userValue.id << " Name: " << userValue.name << " >" << endl;
 }
