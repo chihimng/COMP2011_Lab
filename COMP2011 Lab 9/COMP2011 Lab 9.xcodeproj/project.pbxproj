@@ -11,23 +11,23 @@
 		D945291C1FB99C9E00E55771 /* lab9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94529121FB99C9D00E55771 /* lab9.cpp */; };
 		D945291D1FB99C9E00E55771 /* user.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94529141FB99C9D00E55771 /* user.cpp */; };
 		D945291E1FB99C9E00E55771 /* point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D94529151FB99C9D00E55771 /* point.cpp */; };
-		D94529251FB9B07300E55771 /* cafe.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D94529111FB99C9D00E55771 /* cafe.txt */; };
-		D94529261FB9B07300E55771 /* rating.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D94529131FB99C9D00E55771 /* rating.txt */; };
-		D94529271FB9B07300E55771 /* user.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D94529181FB99C9E00E55771 /* user.txt */; };
+		D945292B1FB9B5D900E55771 /* cafe.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D94529111FB99C9D00E55771 /* cafe.txt */; };
+		D945292C1FB9B5D900E55771 /* rating.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D94529131FB99C9D00E55771 /* rating.txt */; };
+		D945292D1FB9B5D900E55771 /* user.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D94529181FB99C9E00E55771 /* user.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D94529041FB99C8A00E55771 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
-				D94529251FB9B07300E55771 /* cafe.txt in CopyFiles */,
-				D94529261FB9B07300E55771 /* rating.txt in CopyFiles */,
-				D94529271FB9B07300E55771 /* user.txt in CopyFiles */,
+				D945292B1FB9B5D900E55771 /* cafe.txt in CopyFiles */,
+				D945292C1FB9B5D900E55771 /* rating.txt in CopyFiles */,
+				D945292D1FB9B5D900E55771 /* user.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -76,16 +76,16 @@
 		D94529081FB99C8A00E55771 /* COMP2011 Lab 9 */ = {
 			isa = PBXGroup;
 			children = (
+				D94529111FB99C9D00E55771 /* cafe.txt */,
+				D94529131FB99C9D00E55771 /* rating.txt */,
+				D94529181FB99C9E00E55771 /* user.txt */,
 				D94529101FB99C9D00E55771 /* cafe.cpp */,
 				D945291A1FB99C9E00E55771 /* cafe.h */,
-				D94529111FB99C9D00E55771 /* cafe.txt */,
 				D94529121FB99C9D00E55771 /* lab9.cpp */,
 				D94529151FB99C9D00E55771 /* point.cpp */,
 				D94529161FB99C9D00E55771 /* point.h */,
-				D94529131FB99C9D00E55771 /* rating.txt */,
 				D94529141FB99C9D00E55771 /* user.cpp */,
 				D94529171FB99C9E00E55771 /* user.h */,
-				D94529181FB99C9E00E55771 /* user.txt */,
 				D94529191FB99C9E00E55771 /* utils.h */,
 			);
 			path = "COMP2011 Lab 9";

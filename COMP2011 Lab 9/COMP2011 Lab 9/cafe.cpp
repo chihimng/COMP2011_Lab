@@ -130,12 +130,12 @@ void recommend_best_options(const Cafe cafes[], const Point* my_location, int ca
     }
     for (int i = 0; i < cafe_num; i++) {
         for (int j = 0; j < cafe_num - i; j++) {
-            if (cafesSortedByDist[i].dist > cafesSortedByDist[j].dist) {
+            if (cafesSortedByDist[i].dist < cafesSortedByDist[j].dist) {
                 CafeWithDist temp = cafesSortedByDist[i];
                 cafesSortedByDist[i] = cafesSortedByDist[j];
                 cafesSortedByDist[j] = temp;
             }
-            if (getAvgRatingOf(cafesSortedByRating[i]) < getAvgRatingOf(cafesSortedByRating[j])) {
+            if (getAvgRatingOf(cafesSortedByRating[i]) > getAvgRatingOf(cafesSortedByRating[j])) {
                 Cafe temp = cafesSortedByRating[i];
                 cafesSortedByRating[i] = cafesSortedByRating[j];
                 cafesSortedByRating[j] = temp;
