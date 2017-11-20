@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9BDA9611FC2CB5400EBFA0C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BDA95F1FC2CB5400EBFA0C /* main.cpp */; };
 		D9BDA9621FC2CB5400EBFA0C /* lab10_skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BDA9601FC2CB5400EBFA0C /* lab10_skeleton.cpp */; };
 		D9BDA9641FC2CB7F00EBFA0C /* video.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9BDA9631FC2CB6800EBFA0C /* video.txt */; };
+		D9BDA9661FC2E00C00EBFA0C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9BDA9651FC2E00C00EBFA0C /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,9 +29,9 @@
 		D9BDA9531FC2CB3E00EBFA0C /* COMP2011 Lab 10 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "COMP2011 Lab 10"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BDA95D1FC2CB5400EBFA0C /* lab10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lab10.h; sourceTree = "<group>"; };
 		D9BDA95E1FC2CB5400EBFA0C /* frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frame.h; sourceTree = "<group>"; };
-		D9BDA95F1FC2CB5400EBFA0C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../../Downloads/lab10_skeleton/main.cpp; sourceTree = "<group>"; };
 		D9BDA9601FC2CB5400EBFA0C /* lab10_skeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lab10_skeleton.cpp; sourceTree = "<group>"; };
 		D9BDA9631FC2CB6800EBFA0C /* video.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = video.txt; sourceTree = "<group>"; };
+		D9BDA9651FC2E00C00EBFA0C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				D9BDA95E1FC2CB5400EBFA0C /* frame.h */,
 				D9BDA9601FC2CB5400EBFA0C /* lab10_skeleton.cpp */,
 				D9BDA95D1FC2CB5400EBFA0C /* lab10.h */,
-				D9BDA95F1FC2CB5400EBFA0C /* main.cpp */,
+				D9BDA9651FC2E00C00EBFA0C /* main.cpp */,
 			);
 			path = "COMP2011 Lab 10";
 			sourceTree = "<group>";
@@ -130,8 +130,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9BDA9611FC2CB5400EBFA0C /* main.cpp in Sources */,
 				D9BDA9621FC2CB5400EBFA0C /* lab10_skeleton.cpp in Sources */,
+				D9BDA9661FC2E00C00EBFA0C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
