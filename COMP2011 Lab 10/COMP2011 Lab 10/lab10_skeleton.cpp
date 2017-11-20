@@ -27,6 +27,8 @@ Frame *createFrameLinkedList(char imageData[][ROWS][COLS], int numOfFrames)
     for (int i = 0; i < numOfFrames; i++) {
         Frame *newNode = new Frame;
         copyImageData(imageData[i], newNode->image);
+        newNode->num_vehicles = 0;
+        newNode->next_frame = nullptr;
         if (i == 0) {
             result = newNode;
         } else {
