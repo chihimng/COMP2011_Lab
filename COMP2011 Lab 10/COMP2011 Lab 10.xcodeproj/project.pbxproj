@@ -15,13 +15,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		D9BDA9511FC2CB3E00EBFA0C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
 				D9BDA9641FC2CB7F00EBFA0C /* video.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 

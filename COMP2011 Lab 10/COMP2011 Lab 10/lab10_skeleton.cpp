@@ -3,6 +3,14 @@
 
 using namespace std;
 
+void copyImageData(char from[ROWS][COLS], char to[ROWS][COLS]) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            to[i][j] = from[i][j];
+        }
+    }
+}
+
 // TODO 1
 // 
 // Create frame linked list containing all frames and copy image from imageData to every frame.
@@ -15,7 +23,17 @@ using namespace std;
 Frame *createFrameLinkedList(char imageData[][ROWS][COLS], int numOfFrames)
 {
 	Frame *result = nullptr;
-
+    Frame *last = nullptr;
+    for (int i = 0; i < numOfFrames; i++) {
+        Frame *newNode = new Frame;
+        copyImageData(imageData[i], newNode->image);
+        if (i == 0) {
+            result = newNode;
+        } else {
+            last->next_frame = newNode;
+        }
+        last = newNode;
+    }
 	return result;
 }
 
