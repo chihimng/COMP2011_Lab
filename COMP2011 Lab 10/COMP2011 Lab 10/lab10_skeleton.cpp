@@ -45,7 +45,17 @@ Frame *createFrameLinkedList(char imageData[][ROWS][COLS], int numOfFrames)
 // 
 void setNumOfVehicles(Frame *head)
 {
-
+    for (Frame *p = head; p; p = p->next_frame) {
+        int count = 0;
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                if (p->image[i][j] == '*') {
+                    count += 1;
+                }
+            }
+        }
+        p->num_vehicles = count;
+    }
 }
 
 // TODO 3
