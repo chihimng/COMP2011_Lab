@@ -45,7 +45,7 @@ Frame *createFrameLinkedList(char imageData[][ROWS][COLS], int numOfFrames)
 // 
 void setNumOfVehicles(Frame *head)
 {
-    for (Frame *p = head; p; p = p->next_frame) {
+    for (Frame *p = head; p != nullptr; p = p->next_frame) {
         int count = 0;
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
@@ -66,7 +66,18 @@ void setNumOfVehicles(Frame *head)
 // 
 void removeFramesWithNoVehicles(Frame *&head)
 {
-
+    Frame *previous = nullptr;
+    for (Frame *p = head; p != nullptr; p = p->next_frame) {
+        if (p->num_vehicles == 0) {
+            if (previous == nullptr) {
+                head = p->next_frame;
+            } else {
+                previous->next_frame = p->next_frame;
+            }
+        } else {
+            previous = p;
+        }
+    }
 }
 
 // Given function
