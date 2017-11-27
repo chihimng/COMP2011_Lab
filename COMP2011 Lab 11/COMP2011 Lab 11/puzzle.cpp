@@ -17,7 +17,7 @@ WordPuzzle::WordPuzzle(int n) {
 
     for (int i = 0; i < n; i++) {
         this->board[i] = new char[i+1];
-        for (int j = 0; j < i; j++) {
+        for (int j = 0; j < i+1; j++) {
             this->board[i][j] = '_';
         }
     }
@@ -48,12 +48,12 @@ bool WordPuzzle::add_word(const char* word, Position pos, Direction d) {
     switch (d) {
         case HORIZONTAL:
             // check length
-            if (strlen(word) > (this->size - pos.row)) {
+            if (strlen(word) > (this->size - pos.col)) {
                 return false;
             }
             // check if slot available
             for (int i = 0; i < strlen(word); i++) {
-                if (this->board[pos.row][pos.col+i] == '_') {
+                if (this->board[pos.row][pos.col+i] == '_' || this->board[pos.row][pos.col+i] == word[i]) {
                     continue;
                 } else {
                     return false;
@@ -66,12 +66,12 @@ bool WordPuzzle::add_word(const char* word, Position pos, Direction d) {
             return true;
         case VERTICAL:
             // check length
-            if (strlen(word) > (this->size - pos.col)) {
+            if (strlen(word) > (this->size - pos.row)) {
                 return false;
             }
             // check if slot available
             for (int i = 0; i < strlen(word); i++) {
-                if (this->board[pos.row+i][pos.col] == '_') {
+                if (this->board[pos.row+i][pos.col] == '_' || this->board[pos.row+i][pos.col] == word[i]) {
                     continue;
                 } else {
                     return false;
@@ -89,7 +89,7 @@ bool WordPuzzle::add_word(const char* word, Position pos, Direction d) {
             }
             // check if slot available
             for (int i = 0; i < strlen(word); i++) {
-                if (this->board[pos.row+i][pos.col+i] == '_') {
+                if (this->board[pos.row+i][pos.col+i] == '_' || this->board[pos.row+i][pos.col+i] == word[i]) {
                     continue;
                 } else {
                     return false;
