@@ -12,6 +12,18 @@ WordPuzzle::WordPuzzle()
 }
 
 // TODO 2: Implement the constructor to initialize a puzzle board of size n
+WordPuzzle::WordPuzzle(int n) {
+    this->board = new char* [n];
+
+    for (int i = 0; i < n; i++) {
+        this->board[i] = new char[i+1];
+        for (int j = 0; j < i; j++) {
+            this->board[i][j] = '_';
+        }
+    }
+    this->size = n;
+}
+
 
 
 /* Print the current state of the puzzle board
