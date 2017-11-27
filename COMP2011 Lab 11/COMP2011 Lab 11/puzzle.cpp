@@ -43,7 +43,65 @@ void WordPuzzle::print()
 }
 
 // TODO 3: Add a new word to the puzzle board at a specific position
+bool WordPuzzle::add_word(const char* word, Position pos, Direction d) {
 
+    switch (d) {
+        case HORIZONTAL:
+            // check length
+            if (strlen(word) > (this->size - pos.row)) {
+                return false;
+            }
+            // check if slot available
+            for (int i = 0; i < strlen(word); i++) {
+                if (this->board[pos.row][pos.col+i] == '_') {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            // write to array
+            for (int i = 0; i < strlen(word); i++) {
+                this->board[pos.row][pos.col+i] = word[i];
+            }
+            return true;
+        case VERTICAL:
+            // check length
+            if (strlen(word) > (this->size - pos.col)) {
+                return false;
+            }
+            // check if slot available
+            for (int i = 0; i < strlen(word); i++) {
+                if (this->board[pos.row+i][pos.col] == '_') {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            // write to array
+            for (int i = 0; i < strlen(word); i++) {
+                this->board[pos.row+i][pos.col] = word[i];
+            }
+            return true;
+        case DIAGONAL:
+            // check length
+            if (strlen(word) > (this->size - pos.row)) {
+                return false;
+            }
+            // check if slot available
+            for (int i = 0; i < strlen(word); i++) {
+                if (this->board[pos.row+i][pos.col+i] == '_') {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+            // write to array
+            for (int i = 0; i < strlen(word); i++) {
+                this->board[pos.row+i][pos.col+i] = word[i];
+            }
+            return true;
+    }
+}
 
 /* Complete the empty positions of the puzzle board with random characters
  */
