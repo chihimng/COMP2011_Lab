@@ -119,5 +119,12 @@ void WordPuzzle::complete_puzzle()
 
 // TODO 4:  Implement the destructor to deallocate the dyanmic puzzle
 
-
+WordPuzzle::~WordPuzzle() {
+    for (int i = 0; i < this->size; i++) {
+        delete[] this->board[i];
+        this->board[i] = nullptr;
+    }
+    delete[] this->board;
+    this->board = nullptr;
+}
 
